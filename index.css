@@ -10,9 +10,9 @@ body {
   font-family: "Solway", serif;
 }
 #card-container {
-  position: absolute;
-  left: 45%;
-  top: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid white;
   border-radius: 10px;
   background-color: white;
@@ -20,10 +20,51 @@ body {
   width: 350px;
   height: 550px;
 }
-img {
+#food-img {
   position: relative;
+  top: -97px;
   left: 0;
   width: 348px;
-  height: 200px;
+  height: 230px;
   border-radius: 10px 10px 0 0;
+}
+#calory {
+  font-size: 12px;
+  position: absolute;
+  right: 10px;
+  top: -7px;
+}
+#card-content {
+  padding: 2px;
+}
+#right-icon {
+  width: 30px;
+  height: 30px;
+  color: #63bdf7;
+}
+#left-icon {
+  width: 30px;
+  height: 30px;
+  color: #63bdf7;
+}
+#right {
+  padding: 0;
+  border: none;
+  background: none;
+  position: relative;
+  left: 290px;
+  top: 80px;
+}
+#left {
+  padding: 0;
+  border: none;
+  background: none;
+  position: relative;
+  left: -3px;
+  top: 80px;
+  transform: rotateY(180deg);
+}
+#card-text {
+  position: relative;
+  top: -106px;
 }
