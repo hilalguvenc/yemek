@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #63bdf7;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#card-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 1px solid white;
+  background-color: white;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
