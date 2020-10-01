@@ -22,7 +22,27 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   width: 350px;
   height: 350px;
+  animation: card-swipe 1.5s ease 0.5s;
 }
+
+@keyframes card-swipe {
+  0% {
+    transform: translateX(0px) rotate(0deg);
+  }
+  33% {
+    transition: all 0.5s ease-in-out;
+    transform: translateX(140px) rotate(14deg);
+  }
+  66% {
+    transition: all 0.5s ease-in-out;
+    transform: translateX(-140px) rotate(-14deg);
+  }
+  100% {
+    transition: all 0.5s ease-in-out;
+    transform: translateX(0px) rotate(0deg);
+  }
+}
+
 #food-img {
   position: relative;
   top: -15px;

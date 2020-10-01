@@ -9,9 +9,10 @@
 </head>
 
 <body>
-  <div class="card-container active" id="card-container">
+  <div class="card-container active" id="card-container" style="transform: translateX(0px) rotate(0deg);">
     <div id="card-content">
-      <img draggable="false" id="food-img" src="https://i2.cnnturk.com/i/cnnturk/75/630x0/57b1ac25a781b60aa46b8b68.jpg" alt="" />
+      <img draggable="false" id="food-img" src="https://i2.cnnturk.com/i/cnnturk/75/630x0/57b1ac25a781b60aa46b8b68.jpg"
+        alt="" />
       <div class="disable-select" id="card-text">
         <p id="name">Geleneksel Yoğurt Çorbası</p>
         <p id="calory">57 cal</p>
@@ -47,7 +48,7 @@
       if (start === null) {
         start = e.clientX;
       }
-      activeCard.setAttribute("style", `transform: translateX(${e.clientX - start}px) rotate(${(e.clientX - start) * 0.1}deg)`);
+      activeCard.setAttribute("style", `transform: translateX(${Math.ceil(e.clientX - start)}px) rotate(${Math.ceil(Math.ceil(e.clientX - start) * 0.1)}deg)`);
     }
   })
 </script>
