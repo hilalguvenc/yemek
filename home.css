@@ -15,6 +15,7 @@ body {
 }
 
 #card-container {
+  position: relative;
   display: flex;
   justify-content: center;
   border: 1px solid white;
@@ -128,25 +129,125 @@ margin: 15px;
   -ms-user-select: none;
   /* Internet Explorer/Edge */
 }
-.card-detail{
+
+.card-detail {
   display: flex;
   flex-direction: column;
   margin: 5px 20px;
   justify-content: space-around;
   height: 100%;
 }
+
 .name-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.time-wrapper{
+
+.time-wrapper {
   display: flex;
   justify-content: flex-start;
 }
-.action-wrapper{
+
+.action-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 0px 50px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/*popupcss*/
+body {
+  overflow: hidden;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.popup-overlay{
+  position: absolute;
+}
+
+.popup-content {
+  padding: 0 40px;
+}
+
+.popup-menu {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  background: #fff;
+  width: 90vw;
+  height: 80vh;
+  box-shadow: 15px 15px 15px 15px rgba(0, 0, 0, 0.048);
+  border-radius: 25px;
+}
+
+#recipe-img {
+  width: 90vw;
+  height: 30vh;
+}
+
+.recipe-name {
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.cooking-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 40px;
+  background: border-box;
+  border: 3px solid pink;
+  background-color: pink;
+  color: white;
+  border-radius: 20px;
+  width: 60vw;
+  height: 3vh;
+  font-weight: bold;
+  font-size: 35px;
+  margin-top: -21px;
+  margin-bottom: 50px;
+}
+
+p.people {
+  margin-bottom: 20px;
+  margin-top: 0;
+  margin-right: 40px;
+}
+
+p.cooking {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+ul {
+  margin-top: 40px;
+}
+
+li {
+  font-size: 33px;
+  margin: 20px 0;
+}
+
+.recipe-content {
+  font-size: 30px;
+  text-align: justify;
+}
+
+.exit {
+  font-weight: 600;
+  font-size: 60px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: #eee
 }

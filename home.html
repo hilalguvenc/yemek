@@ -5,6 +5,7 @@
   <script src="home.js"></script>
   <link rel="stylesheet" href="home.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/9b1d781105.js" crossorigin="anonymous"></script>
   <title>nepiser.com</title>
 </head>
 
@@ -40,16 +41,18 @@
       </div>
     </div>
   </div>
-
-  <div class="menu popup">
-    <div><img src="https://i2.cnnturk.com/i/cnnturk/75/630x0/57b1ac25a781b60aa46b8b68.jpg" alt="" /></div>
+ <div class="popup-overlay">
+  <div class="popup-menu">
+    <div class="popup-main-image"><img id="recipe-img"
+        src="https://i2.cnnturk.com/i/cnnturk/75/630x0/57b1ac25a781b60aa46b8b68.jpg" alt="" /></div>
+        <i class="exit fas fa-times"></i>
     <div class="popup-content">
       <div class="recipe-name">
         <p>Geleneksel Yoğurt Çorbası</p>
       </div>
-      <div>
-        <p class="people">4-5</p>
-        <p class="cooking">30dk</p>
+      <div class="cooking-info">
+        <p class="people">Kaç Kişilik : <b>4-5</b></p><br>
+        <p class="cooking">Pişirme : <b>30dk</b></p>
       </div>
       <div class="ingredients">
         <h1>Geleneksel Yoğurt Çorbası Tarifi İçin Malzemeler</h1>
@@ -65,7 +68,8 @@
       </div>
       <div class="preparation">
         <h1>Yapılışı</h1>
-        <p>Öncelikle bir çay bardağı pirinçi özütü çıkana kadar haşlıyoruz, bir parça da tereyağı ekliyoruz ki daha
+        <p class="recipe-content">Öncelikle bir çay bardağı pirinçi özütü çıkana kadar haşlıyoruz, bir parça da tereyağı
+          ekliyoruz ki daha
           yumuşak ve lezzetli olsun daha sonra ayrı bir kapta iki su bardağı yoğurda bir yumurta ve bir miktarda sıvı
           yağ ekleyerek çırpıyoruz ,sonrasında haşlanmış olan pirinçlerimizin üzerine yoğurt karışımı döküyoruz, hızlı
           hızlı karıştırıyoruz ki kesilmemesi için. Çorbamız kaynamaya başlayınca bırakıyoruz. Ayrı bir kapta bir miktar
@@ -74,7 +78,7 @@
       </div>
     </div>
   </div>
-
+ </div> 
 </body>
 <script>
   let start = null;
@@ -82,6 +86,7 @@
   let approved = false;
   let animating = false;
   const activeCard = document.querySelector('.card-container.active');
+  const close = document.querySelector('.exit');
 
   function touchstart() {
     animating = true;
@@ -93,6 +98,10 @@
     approved = false;
     dismissed = false;
     activeCard.setAttribute("style", `transform: translateX(0px)`);
+  }
+
+  function closepopup(){
+    document.querySelector(".popup-menu").setAttribute("style",`display:none`);
   }
 
   function getClientX(e) {
@@ -109,7 +118,6 @@
       );
       if (`${Math.ceil(getClientX(e) - start)}` > 360) {
         if (!approved) {
-          console.log("sağa attık");
           approved = true;
         }
       } else if (`${Math.ceil(getClientX(e) - start)}` < (-360)) {
@@ -127,6 +135,7 @@
   document.querySelector('body').addEventListener("touchend", touchend);
   activeCard.addEventListener("mousemove", touchmove);
   activeCard.addEventListener("touchmove", touchmove);
+  close.addEventListener("click",closepopup);
 
   //for mobile animation
 </script>
