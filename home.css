@@ -4,16 +4,15 @@
 
 body {
   background-color: #63bdf7;
+  font-family: "Roboto", sans-serif;
+}
+.card-wrapper{
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Roboto", sans-serif;
-  position: relative;
-  width: 100vw;
   height: 100vh;
 }
-
 #card-container {
   position: relative;
   display: flex;
@@ -24,7 +23,7 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   width: 90vw;
   height: 60vh;
-  animation: card-swipe 1.5s ease 0.5s;
+  animation: card-swipe 1.5s ease 0.s;
 }
 
 @keyframes card-swipe {
@@ -95,11 +94,6 @@ body {
   background: none;
 }
 
-/*#card-text {
-position: relative;
-top: -16px;
-margin: 15px;
-}*/
 #name {
   font-weight: bold;
   font-size: 52px;
@@ -156,29 +150,52 @@ margin: 15px;
   margin: 0px 50px;
 }
 
-.hidden {
-  display: none !important;
+/*popupcss*/
+.fade-in {
+  -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
-/*popupcss*/
-body {
-  overflow: hidden;
-  font-family: "Roboto", sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
-.popup-overlay{
-  position: absolute;
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
+
+/*.popup-overlay {
+  display: block!important;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999999999!important;
+}*/
 
 .popup-content {
   padding: 0 40px;
 }
 
 .popup-menu {
+  position: absolute;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
   overflow-y: scroll;
   background: #fff;
   width: 90vw;
@@ -249,5 +266,5 @@ li {
   position: absolute;
   right: 20px;
   top: 20px;
-  color: #eee
+  color: #eee;
 }

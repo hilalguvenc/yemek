@@ -10,6 +10,7 @@
 </head>
 
 <body>
+  <div class="card-wrapper">
   <div class="card-container active" id="card-container" style="transform: translateX(0px) rotate(0deg);">
     <div id="card-content">
       <div class="image-wrapper">
@@ -41,8 +42,8 @@
       </div>
     </div>
   </div>
- <div class="popup-overlay">
-  <div class="popup-menu">
+ <!--<div class="popup-overlay"></div>-->
+  <div class="fade-in popup-menu">
     <div class="popup-main-image"><img id="recipe-img"
         src="https://i2.cnnturk.com/i/cnnturk/75/630x0/57b1ac25a781b60aa46b8b68.jpg" alt="" /></div>
         <i class="exit fas fa-times"></i>
@@ -78,12 +79,13 @@
       </div>
     </div>
   </div>
- </div> 
+</div>
 </body>
 <script>
   let start = null;
   let dismissed = false;
   let approved = false;
+  let recipeOpen = document.querySelector("button#right");
   let animating = false;
   const activeCard = document.querySelector('.card-container.active');
   const close = document.querySelector('.exit');
@@ -103,6 +105,9 @@
   function closepopup(){
     document.querySelector(".popup-menu").setAttribute("style",`display:none`);
   }
+  function openRecipePopup(){
+    document.querySelector(".popup-menu").setAttribute("style",`display:block`);
+  }
 
   function getClientX(e) {
     return e.clientX !== undefined ? e.clientX : e.changedTouches[0].clientX;
@@ -118,11 +123,12 @@
       );
       if (`${Math.ceil(getClientX(e) - start)}` > 360) {
         if (!approved) {
+          openRecipePopup();
           approved = true;
         }
       } else if (`${Math.ceil(getClientX(e) - start)}` < (-360)) {
         if (!dismissed) {
-          console.log("sola attık");
+          closepopup();
           dismissed = true;
         }
 
@@ -136,6 +142,7 @@
   activeCard.addEventListener("mousemove", touchmove);
   activeCard.addEventListener("touchmove", touchmove);
   close.addEventListener("click",closepopup);
+  recipeOpen.addEventListener("click",openRecipePopup);
 
   //for mobile animation
 </script>
