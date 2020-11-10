@@ -9,6 +9,7 @@ body {
   align-items: center;
   height: 100vh;
   background-color: #63bdf7;
+  overflow: hidden;
 }
 
 .card-wrapper {
@@ -28,7 +29,7 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   width: max(30vw, 300px);
   height: 400px;
-  animation: card-swipe 1.5s ease 0.s;
+  animation: card-swipe 1.5s ease 0.5s;
 }
 
 @keyframes card-swipe {
@@ -160,62 +161,57 @@ body {
   margin: 20px 30px;
 }
 
-/*popupcss*/
-.fade-in {
-  -webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-  animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-}
-
-@-webkit-keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-/*.popup-overlay {
-display: block!important;
-position: fixed;
-left: 0;
-top: 0;
-width: 100%;
-height: 100%;
-background: rgba(0, 0, 0, 0.7);
-z-index: 999999999!important;
-}*/
-
 .popup-content {
   padding: 0 24px;
 }
 
 .popup-menu {
+  -webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   position: absolute;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
   overflow-y: scroll;
   background: #fff;
-  width: max(43vw, 450px);
+  width: max(43vw, 350px);
   height: 500px;
   box-shadow: 15px 15px 15px 15px rgba(0, 0, 0, 0.048);
   border-radius: 25px;
 }
 
+/*popup animation css*/
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
 #recipe-img {
-  width: max(43vw, 450px);
+  width: max(43vw, 350px);
   height: 230px;
 }
 
@@ -233,7 +229,7 @@ z-index: 999999999!important;
   background-color: pink;
   color: white;
   border-radius: 20px;
-  width: max(25vw, 130px);
+  width: max(25vw, 280px);
   height: 20px;
   font-weight: bold;
   font-size: max(0.2vw, 17px);
@@ -273,9 +269,21 @@ li {
 
 .exit {
   font-weight: 600;
-  font-size: max(0.2vw,40px);
+  font-size: max(0.2vw, 30px);
   position: absolute;
   right: 20px;
   top: 20px;
   color: #eee;
+}
+
+.card-container.active {
+  z-index: 9;
+}
+
+.hidden {
+  display: none;
+}
+
+.fade-in.popup-menu.hidden {
+  z-index: 999999999;
 }
