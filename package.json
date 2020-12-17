@@ -1,0 +1,18 @@
+{
+  "name": "nepiser",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "install": "cd server && npm i",
+    "start:prod": "cd server && npm run start:prod",
+    "start:dev": "cd server && npm run start:dev",
+    "start:dev:watch": "cd server && npm run start:dev:watch",
+    "build:server": "cd ./server && npm run build",
+    "build:server:watch": "cd ./server && npm run build:watch",
+    "bootstrap": "npm run install && npm run build:server && npm run start:prod"
+  },
+  "author": "mehmetsefa2644@gmail.com",
+  "license": "ISC"
+}
