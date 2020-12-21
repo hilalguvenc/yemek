@@ -1,5 +1,5 @@
 [package]
-name = "actix-web-static-files-boilerplate"
+name = "nepiser"
 version = "0.1.0"
 authors = ["Mehmet Sefa Balık <mehmetsefa2644@gmail.com>"]
 edition = "2018"
@@ -10,4 +10,6 @@ edition = "2018"
 actix-web = "3"
 actix-files = "0.4.1"
 log = "0.4"
+env_logger = "0.8.2"
 dotenv = "0.15.0"
+mime = "0.3.16"
