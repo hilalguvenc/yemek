@@ -13,7 +13,13 @@ async fn index(req: HttpRequest) -> impl Responder {
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-  from_filename(".env").ok();
+  let env_file = if std::env::var("ENVIRONMENT").unwrap_or("development".to_string()) == "production" {
+    ".env"
+  } else {
+    ".local.env"
+  };
+
+  from_filename(env_file).ok();
   env_logger::Builder::from_env(env_logger::Env::default().default_filter_or("info")).init();
 
   let addr = format!("0.0.0.0:{}", std::env::var("PORT").unwrap());
