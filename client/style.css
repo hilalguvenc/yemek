@@ -1,0 +1,46 @@
+body {
+    display: flex;
+    justify-content: center;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    overflow-x: hidden;
+    position: absolute;
+    top: 20%;
+    border-radius: 10px;
+}
+
+.card-image {
+    height: 57vh;
+    background-color: rgb(247, 104, 192);
+}
+
+.recipe-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 20vh;
+    background-color: rgb(201, 195, 195);
+}
+
+.recipe-sub-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.name {
+    font-size: 33px;
+}
+
+.people {
+    font-size: 20px;
+}
+
+.duration {
+    font-size: 20px;
+}
