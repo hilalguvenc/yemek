@@ -2,13 +2,14 @@ body {
     display: flex;
     justify-content: center;
     font-family: 'Noto Sans', sans-serif;
+    overflow: hidden;
 }
 
 .card-container {
     display: flex;
     flex-direction: column;
     width: 90vw;
-    overflow-x: hidden;
+    overflow: hidden;
     position: absolute;
     top: 20%;
     border-radius: 10px;
@@ -24,7 +25,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 20vh;
+    height: 14vh;
     background-color: rgb(201, 195, 195);
 }
 
@@ -43,4 +44,18 @@ body {
 
 .duration {
     font-size: 20px;
+}
+
+.badge {
+    margin-top: 30px;
+    margin-right: 10px;
+    float: right;
+    background-color: red;
+    border: 5px solid red;
+    border-radius: 10px;
+    color: white;
+}
+
+.recipe-name {
+    line-height: 1px;
 }
