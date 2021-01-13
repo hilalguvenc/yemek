@@ -17,7 +17,7 @@ body {
 
 .card-image {
     height: 57vh;
-    background-color: rgb(247, 104, 192);
+    background-color: #FA7BA8;
 }
 
 .recipe-info {
@@ -50,8 +50,8 @@ body {
     margin-top: 30px;
     margin-right: 10px;
     float: right;
-    background-color: red;
-    border: 5px solid red;
+    background-color: #DC2A2A;
+    border: 5px solid #DC2A2A;
     border-radius: 10px;
     color: white;
 }

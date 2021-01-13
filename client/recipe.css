@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.image-card {
+    background-color: #FA7BA8;
+    height: 30vh;
+    width: 100%;
+}
+
+.image-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-recipe-info {
+    display: flex;
+    flex-direction: row;
+}
+
+.close {
+    left: 13px;
+    font-size: 25px;
+    position: absolute;
+    top: -1%;
+}
+
+.ingredients-title {
+    margin-left: 15px;
+    color: #B83636;
+    font-size: 18px;
+}
+
+.making-title {
+    color: #B83636;
+    font-size: 18px;
+    margin-left: 15px;
+}
+
+li::marker {
+    font-size: 20px;
+}
+
+ul {
+    line-height: 30px;
+}
+
+ul li {
+    color: #000000;
+}
