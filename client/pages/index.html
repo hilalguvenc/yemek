@@ -11,21 +11,6 @@
 </head>
 
 <body>
-  <div class="card-container active">
-    <div class="card-image">
-      <img>
-      <span class="badge">sebze yemeği</span>
-    </div>
-    <div class="recipe-info">
-      <div class="recipe-name">
-        <p class="name">MANTAR GÜVEÇ</p>
-      </div>
-      <div class="recipe-sub-info">
-        <p class="people">4 Kişilik</p>
-        <p class="duration">25 dk</p>
-      </div>
-    </div>
-  </div>
   <div class="card-container">
     <div class="card-image">
       <img>
@@ -71,6 +56,48 @@
       </div>
     </div>
   </div>
+  <div class="card-container active" style="overflow: hidden;">
+    <div class="card-image">
+      <img>
+      <span class="badge">sebze yemeği</span>
+    </div>
+    <div class="recipe-info">
+      <div class="recipe-name">
+        <p class="name">MANTAR GÜVEÇ</p>
+      </div>
+      <div class="recipe-sub-info">
+        <p class="people">4 Kişilik</p>
+        <p class="duration">25 dk</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    let animation = false;
+    let start = null;
+    const activeCard = document.querySelector(".card-container.active");
+
+    function touchDown() {
+      animation = true;
+    }
+
+    function touchUp() {
+      activeCard.style.transform ="translateX(0px) rotate(0deg)";
+      animation = false;
+      start = null;
+    }
+
+    function touchMove(e) {
+        if (start === null) {
+          start = e.touches[0].clientX;
+        }
+          activeCard.style.transform = `translateX(${Math.ceil(e.touches[0].clientX - start)}px) rotate(${Math.ceil(e.touches[0].clientX - start)*0.1}deg)`;
+          console.log(`translateX(${Math.ceil(e.touches[0].clientX - start)}px) rotate(${Math.ceil(e.touches[0].clientX - start)*0.1}deg)`);
+      }
+    
+    activeCard.addEventListener("touchstart",touchDown);
+    activeCard.addEventListener("touchmove",touchMove);
+    activeCard.addEventListener("touchend",touchUp);
+  </script>
 </body>
 
 </html>
