@@ -2,21 +2,26 @@ body {
     display: flex;
     justify-content: center;
     font-family: 'Noto Sans', sans-serif;
-    overflow: hidden!important;
+    overflow: hidden;
     width: 100%;
+    height: 100%;
 }
 
 .card-container {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    width: 90vw;
+    width: 90%;
     position: absolute;
     top: 20%;
     right: 5%;
     bottom: 5%;
     border-radius: 10px;
     animation: card-swipe 1.5s ease 0.5s;
+}
+.active{
+    overflow: hidden;
+    z-index: 10;
 }
 
 @keyframes card-swipe {
@@ -38,7 +43,7 @@ body {
   }
 
 .card-image {
-    height: 57vh;
+    height: 400px;
     background-color: #FA7BA8;
 }
 
@@ -47,7 +52,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 14vh;
+    height: 100px;
     background-color: rgb(201, 195, 195);
 }
 
