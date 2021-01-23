@@ -11,7 +11,7 @@ fastify.get('/', async (request, reply) => {
   return reply.sendFile('index.html', path.join(__dirname, '../pages'));
 });
 
-fastify.get('/recipe', async (request, reply) => {
+fastify.get('/recipe/:id', async (request, reply) => {
   return reply.sendFile('recipe.html', path.join(__dirname, '../pages'));
 })
 // Run the server!
